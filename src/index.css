@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* OpenAI-inspired design system with breathable whitespace and subtle elegance */
+
+@layer base {
+  :root {
+    /* Light mode - OpenAI inspired */
+    --background: 210 20% 98%;
+    --foreground: 220 20% 7%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 7%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 7%;
+    
+    /* Primary blue accent */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Electric blue for CTAs */
+    --electric: 217 91% 60%;
+    --electric-foreground: 0 0% 100%;
+    
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 220 20% 20%;
+    
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 15% 50%;
+    
+    --accent: 210 20% 95%;
+    --accent-foreground: 220 20% 20%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 217 91% 60%;
+    
+    /* Subtle gradient backgrounds */
+    --gradient-hero: linear-gradient(135deg, 210 20% 98%, 200 25% 96%);
+    --gradient-radial: radial-gradient(ellipse at top, 217 91% 60% 0%, transparent 50%);
+    --gradient-soft: linear-gradient(180deg, 210 20% 98%, 0 0% 100%);
+    
+    /* Shadows for depth */
+    --shadow-soft: 0 1px 3px 0 hsl(220 15% 50% / 0.1), 0 1px 2px -1px hsl(220 15% 50% / 0.1);
+    --shadow-medium: 0 4px 6px -1px hsl(220 15% 50% / 0.1), 0 2px 4px -2px hsl(220 15% 50% / 0.1);
+    --shadow-large: 0 10px 15px -3px hsl(220 15% 50% / 0.1), 0 4px 6px -4px hsl(220 15% 50% / 0.1);
+    
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - subtle and sophisticated */
+    --background: 220 27% 6%;
+    --foreground: 210 20% 95%;
+    
+    --card: 220 20% 8%;
+    --card-foreground: 210 20% 95%;
+    
+    --popover: 220 20% 8%;
+    --popover-foreground: 210 20% 95%;
+    
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    --electric: 217 91% 60%;
+    --electric-foreground: 0 0% 100%;
+    
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 210 20% 80%;
+    
+    --muted: 220 20% 10%;
+    --muted-foreground: 220 15% 60%;
+    
+    --accent: 220 20% 12%;
+    --accent-foreground: 210 20% 80%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 217 91% 60%;
+    
+    /* Dark mode gradients */
+    --gradient-hero: linear-gradient(135deg, 220 27% 6%, 220 20% 8%);
+    --gradient-radial: radial-gradient(ellipse at top, 217 91% 60% 0%, transparent 50%);
+    --gradient-soft: linear-gradient(180deg, 220 27% 6%, 220 20% 8%);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-helvetica;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    line-height: 1.6;
+  }
+  
+  /* Content width constraint */
+  .content-container {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+}
+
+@layer components {
+  /* OpenAI-inspired button variants */
+  .btn-hero {
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-semibold transition-all duration-200;
+    @apply bg-[hsl(var(--electric))] text-[hsl(var(--electric-foreground))] hover:shadow-lg hover:-translate-y-0.5;
+    @apply active:translate-y-0 active:shadow-md;
+  }
+  
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-semibold transition-all duration-200;
+    @apply text-foreground hover:bg-secondary hover:shadow-sm;
+  }
+  
+  .btn-primary-pill {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-medium transition-all duration-200;
+    @apply bg-primary text-primary-foreground hover:shadow-md hover:-translate-y-0.5;
+    @apply active:translate-y-0 active:shadow-sm;
+  }
+  
+  /* Card variants */
+  .card-soft {
+    @apply bg-card rounded-2xl border border-border/50 shadow-[var(--shadow-soft)] transition-all duration-200;
+    @apply hover:shadow-[var(--shadow-medium)] hover:-translate-y-1;
+  }
+  
+  .card-feature {
+    @apply bg-card rounded-xl p-6 border border-border/30 transition-all duration-300;
+    @apply hover:border-primary/20 hover:shadow-[var(--shadow-medium)];
+  }
+  
+  /* Typography enhancements */
+  .heading-hero {
+    @apply text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1];
+    background: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--foreground) / 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .heading-section {
+    @apply text-3xl lg:text-4xl font-bold tracking-tight leading-tight;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Subtle animations */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Link underline animation */
+  .link-animated {
+    @apply relative;
+  }
+  
+  .link-animated::after {
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-bottom-right scale-x-0 transition-transform duration-300;
+    content: '';
+  }
+  
+  .link-animated:hover::after {
+    @apply origin-bottom-left scale-x-100;
+  }
+}
