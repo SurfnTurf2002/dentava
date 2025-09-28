@@ -22,14 +22,6 @@ const Hero = () => {
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#demo" className="btn-hero">
-                Book a demo
-              </a>
-              <a href="#demo-section" className="btn-ghost">
-                See it in action
-              </a>
-            </div>
           </div>
 
           {/* Right Content - Dental Visual */}

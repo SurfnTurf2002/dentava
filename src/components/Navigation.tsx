@@ -45,9 +45,6 @@ const Navigation = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="#demo" className="btn-primary-pill">
-              Book a demo
-            </a>
             <a href="#signin" className="btn-ghost text-sm">
               Sign in
             </a>
@@ -83,9 +80,6 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="pt-4 pb-2 border-t border-border/30 mt-4">
-                <a href="#demo" className="btn-primary-pill w-full mb-2">
-                  Book a demo
-                </a>
                 <a href="#signin" className="btn-ghost w-full text-center">
                   Sign in
                 </a>

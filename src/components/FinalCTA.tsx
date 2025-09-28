@@ -17,9 +17,6 @@ const FinalCTA = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="#demo" className="btn-hero text-lg px-12 py-5">
-              Book a demo
-            </a>
             <p className="text-sm text-muted-foreground">
               Kostenlos • Keine Kreditkarte erforderlich • Sofort aktiviert
             </p>
